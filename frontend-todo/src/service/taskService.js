@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://full-to-do-list.onrender.com/tasks';
+const API_URL = 'https://full-to-do-list.onrender.com';
 
 // Get all tasks
 export const getAllTask = () => {
