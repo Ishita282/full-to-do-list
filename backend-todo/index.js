@@ -20,15 +20,6 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something broke!");
 });
 
-router.get("/", async (req, res) => {
-  try {
-    const tasks = await Task.find();
-    res.json(tasks);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server Error" });
-  }
-});
 
 app.use("/tasks", taskroute);
 
