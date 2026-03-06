@@ -1,6 +1,5 @@
 const express = require("express");
 const {
-  getfunc,
   getAllTasks,
   createTask,
   getTasksById,
@@ -10,8 +9,6 @@ const {
 const route = express.Router();
 route.use(express.json());
 
-
-route.get("/", getfunc);
 
 /*
 Route: /task

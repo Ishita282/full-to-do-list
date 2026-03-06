@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Tasks from "./Tasks";
 import CreateTasks from "./CreateTasks";
-import { getAllTask, createTask } from "./service/taskService";
-import { deleteTask as deleteTaskAPI } from "./service/taskService";
-import { updateTask } from "./service/taskService";
+import { getAllTask, createTask, updateTask, deleteTask as deleteTaskAPI } from "./service/taskService";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -26,7 +24,6 @@ function App() {
   async function deleteTask(id) {
   await deleteTaskAPI(id);
 
-  // Remove the deleted task from state immediately
   setTasks(prevTasks => prevTasks.filter(task => task._id !== id));
 }
 

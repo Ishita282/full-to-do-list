@@ -3,16 +3,13 @@ const mongoose = require("mongoose");
 function dbConnection() {
   const DB_URL = process.env.MONGO_URI;
 
-  mongoose.connect(DB_URL)
-    .then(() => console.log("Database is connected successfully!"))
-    .catch((err) => console.error("Connection Error:", err));
+  mongoose.connect(DB_URL );
 
-  mongoose.connection.on("disconnected", () => {
-    console.log("MongoDB disconnected!");
-  });
+  const db = mongoose.connection;
 
-  mongoose.connection.on("error", (err) => {
-    console.error("MongoDB connection error:", err);
+   db.on("error", console.error.bind(console, "Connection Error"));
+  db.once("open", function () {
+    console.log("Database is connected successfully!");
   });
 }
 

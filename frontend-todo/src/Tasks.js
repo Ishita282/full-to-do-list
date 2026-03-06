@@ -11,7 +11,7 @@ function Tasks(props) {
       <p>{props.content}</p>
 
       <button onClick={handleClick}>Delete</button>
-      <br></br>
+      <br />
       <button onClick={() => props.onUpdate(props.id)}>Update</button>
     </div>
   );

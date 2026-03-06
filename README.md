@@ -56,7 +56,7 @@ A full-stack **To-Do List application** built with the **MERN stack** (MongoDB, 
 1. **Clone the repository**
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Ishita282/full-to-do-list/tree/main/backend-todo
 ```
 
 2. **Install backend dependencies**
@@ -85,14 +85,14 @@ npm install
 npm start
 ```
 
-6. **Open the app in your browser**
 
-[http://localhost:3000](http://localhost:3000)
+## Links
 
----
+1. **Deployment links**
 
-## Notes
+      >> **For Backend** (render) : "https://full-to-do-list.onrender.com"
+      >> **For Frontend** (vercel) : "https://full-to-do-list-ggmv91su8-ishitas-projects-65d2bb9d.vercel.app"
 
-- Backend runs on `http://localhost:8081` by default
-- Frontend communicates with backend using Axios
-- Make sure your MongoDB database is running and configured in the `.env` file
+2. **GitHub links**
+
+      >> **Repository** : "https://github.com/Ishita282/full-to-do-list"

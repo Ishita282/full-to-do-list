@@ -1,15 +1,5 @@
 const taskModel = require("../model/task.model");
 
-exports.getfunc = async (req, res) => {
-  try {
-    const tasks = await taskModel.find();
-    res.json(tasks);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server Error" });
-  }
-};
-
 exports.getAllTasks = async (req, res) => { 
   const allTask = await taskModel.find();
 
