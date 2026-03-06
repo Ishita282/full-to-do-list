@@ -10,6 +10,8 @@ dbConnection();
 
 const app = express();
 
+console.log("Mongo URI:", process.env.MONGO_URI);
+
 app.use(express.json());
 app.use(cors());
 
@@ -18,10 +20,14 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something broke!");
 });
 
-app.get("/", (req, res) => {
-  res.status(200).json({
-    message: "Welcome...",
-  });
+router.get("/", async (req, res) => {
+  try {
+    const tasks = await Task.find();
+    res.json(tasks);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server Error" });
+  }
 });
 
 app.use("/tasks", taskroute);
