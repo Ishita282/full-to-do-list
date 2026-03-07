@@ -91,7 +91,7 @@ npm start
 1. **Deployment links**
 
       >> **For Backend** (render) : "https://full-to-do-list.onrender.com"
-      >> **For Frontend** (vercel) : "https://full-to-do-list-ggmv91su8-ishitas-projects-65d2bb9d.vercel.app"
+      >> **For Frontend** (vercel) : "https://full-to-do-list.vercel.app/"
 
 2. **GitHub links**
 
