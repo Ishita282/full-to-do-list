@@ -11,9 +11,7 @@ dbConnection();
 const app = express();
 
 app.use(express.json());
-app.use(cors({
-  origin: "https://full-to-do-list.vercel.app"
-}));
+app.use(cors());
 
 app.get('/', (req, res) =>{
   res.status(200).send("Welcome to the To-do List App!")
