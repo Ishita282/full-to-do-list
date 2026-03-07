@@ -12,7 +12,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "https://full-to-do-list.vercel.app/"
+  origin: "https://full-to-do-list.vercel.app"
 }));
 
 app.get('/', (req, res) =>{
