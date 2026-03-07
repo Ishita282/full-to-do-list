@@ -4,11 +4,13 @@ const {
   createTask,
   getTasksById,
   updateTasksById,
-  deleteTaskById
-} = require("../controller/task.controller")
-const route = express.Router();
-route.use(express.json());
+  deleteTaskById,
+  updateTaskStatus
+} = require("../controller/task.controller");
 
+const route = express.Router();
+
+route.use(express.json());
 
 /*
 Route: /task
@@ -50,15 +52,18 @@ Parameter: id
 
 route.put("/:id", updateTasksById);
 
+
+
+route.delete("/:id", deleteTaskById);
+
 /*
-Route: /task/{id}
-Method: DELETE
-Description: Delete the task by id
+Route: /task/{id}/status
+Method: PATCH
+Description: Update the status to pending/done
 Access: Public
 Parameter: id
 */
 
-route.delete("/:id", deleteTaskById);
-
+route.patch("/:id/status", updateTaskStatus);
 
 module.exports = route;

@@ -7,8 +7,8 @@ function CreateTasks(props) {
     content: "",
   });
 
-  function handleChange(event) {
-    const { name, value } = event.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
     setTask((prevTask) => {
       return {
@@ -16,36 +16,39 @@ function CreateTasks(props) {
         [name]: value,
       };
     });
-  }
+  };
 
-  function submitTask(event) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     props.onAdd(Task);
     setTask({
       title: "",
       content: "",
     });
-    event.preventDefault();
-  }
+  };
 
   return (
     <div className="CreateTasks">
       <form>
+        Write the name of your To-do
+        <br />
         <input
           name="title"
-          onChange={handleChange}
           value={Task.title}
+          onChange={handleChange}
           placeholder="Title"
         />
-        <div className="blank"> </div>
+        <div className="blank"></div>
+        Write the name of your To-do
+        <br />
         <textarea
           name="content"
-          onChange={handleChange}
           value={Task.content}
+          onChange={handleChange}
           placeholder="Take a Task..."
           rows="3"
         />
-
-        <button onClick={submitTask}>Add</button>
+        <button onClick={handleSubmit}>Add</button>
       </form>
     </div>
   );

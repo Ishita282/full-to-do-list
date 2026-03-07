@@ -4,31 +4,44 @@
   box-sizing: border-box;
 }
 
+:root {
+  --prim: rgba(244, 79, 50, 0.83);
+  --second: rgb(88, 146, 247);
+  --third: rgb(55, 46, 53);
+  --light: #eee0e0;
+  --dark: #242424;
+  --prim-font: "Montserrat", sans-serif;
+  --second-font: "McLaren", cursive;
+  --bold: 300;
+  --low: 50;
+  --text-decor: underline wavy;
+  --large: 600;
+  --medium: 400;
+  --small: 100;
+}
+
 .html {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--prim-font);
 }
 
 .body {
-  background: #eeeeee;
+  background: var(--light);
   padding: 0 16px;
 }
 
 .header {
-  background-color: tomato;
+  background-color: var(--prim);
+  color: var(--third);
   margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   text-align: center;
+  font-family: var(--second-font);
+  font-weight: var(--bold);
 }
 
-.header h1 {
-  color: #fff;
-  font-family: "McLaren", cursive;
-  font-weight: 200;
-}
-
-.Task {
-  background-color: #fff;
+.Tasks {
+  background-color: var(--light);
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
@@ -37,7 +50,13 @@
   float: left;
 }
 
-.Task h1 {
+.Tasks h1 {
+  font-family: var(--prim-font);
+  font-size: medium;
+  font-weight: var(--low);
+}
+
+.Tasks p {
   font-size: 1.1em;
   margin-bottom: 6px;
 }
@@ -52,49 +71,49 @@
   position: relative;
   width: 400px;
   padding: 15px;
-  background: #fff;
+  background: var(--light);
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .CreateTasks input,
 .CreateTasks textarea {
-  width: 100%;
+  width: 80%;
   border: none;
   outline: none;
   resize: none;
   font-size: 16px;
   padding: 8px;
-  font-family: inherit;
-  margin: 20px;
+  font-family: var(--prim-font);
+  margin: 30px;
 }
 
 .CreateTasks button {
   position: absolute;
   right: 15px;
   bottom: -18px;
-  background: #f5ba13;
-  color: white;
+  background: var(--second);
+  color: var(--dark);
   border: none;
   border-radius: 50%;
   width: 40px;
   height: 40px;
   font-size: 16px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.blank{
+.blank {
   width: 70%;
   height: 5px;
-  background-color: gainsboro;
+  background-color: var(--third);
   border: none;
   border-radius: 30px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 .Tasks {
-  background: #fff;
+  background: var(--light);
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   padding: 15px;
@@ -116,7 +135,7 @@
 .Tasks button {
   background: transparent;
   border: none;
-  color: #000;
+  color: var(--dark);
   padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
@@ -128,7 +147,8 @@
 }
 
 .Tasks button:hover{
-  color: tomato;
+  color: var(--prim);
   text-decoration: underline;
   transform: translateY(-5px); 
-}
+} 
+

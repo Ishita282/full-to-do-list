@@ -1,6 +1,6 @@
 const taskModel = require("../model/task.model");
 
-exports.getAllTasks = async (req, res) => { 
+exports.getAllTasks = async (req, res) => {
   const allTask = await taskModel.find();
 
   if (allTask.length === 0) {
@@ -32,7 +32,6 @@ exports.createTask = async (req, res) => {
     success: true,
     data: allTask,
   });
-
 };
 
 exports.getTasksById = async (req, res) => {
@@ -48,7 +47,7 @@ exports.getTasksById = async (req, res) => {
   res.status(200).json({
     success: true,
     message: `Task with id: ${id}`,
-    data: task
+    data: task,
   });
 };
 
@@ -71,18 +70,18 @@ exports.updateTasksById = async (req, res) => {
     });
   }
 
-  Object.assign(task, data)
-  const updatedTask = await task.save()
+  Object.assign(task, data);
+  const updatedTask = await task.save();
 
   res.status(200).json({
     success: true,
     message: `Task with id: ${id}`,
-    data: updatedTask
+    data: updatedTask,
   });
 };
 
 exports.deleteTaskById = async (req, res) => {
-      const { id } = req.params;
+  const { id } = req.params;
 
   const task = await taskModel.findById(id);
 
@@ -99,5 +98,32 @@ exports.deleteTaskById = async (req, res) => {
     success: true,
     message: "Task deleted successfully!",
   });
+};
 
-}
+exports.updateTaskStatus = async (req, res) => {
+  const { status } = req.body;
+  const { id } = req.params;
+
+  if (!status) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Status is required" });
+  }
+
+  const updatedTask = await taskModel.findByIdAndUpdate(
+    id,
+    { status },
+    { new: true },
+  );
+
+  if (!updatedTask) {
+    return res.status(404).json({ success: false, message: "Task not found" });
+  }
+
+  const allTask = await taskModel.find();
+
+  res.status(200).json({
+    success: true,
+    data: allTask,
+  });
+};
