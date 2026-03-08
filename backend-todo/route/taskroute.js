@@ -52,7 +52,13 @@ Parameter: id
 
 route.put("/:id", updateTasksById);
 
-
+/*
+Route: /task/{id}
+Method: DELETE
+Description: Delete the task by id
+Access: Public
+Parameter: id
+*/
 
 route.delete("/:id", deleteTaskById);
 

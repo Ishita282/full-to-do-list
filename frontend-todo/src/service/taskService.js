@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_URL = 'https://full-to-do-list.onrender.com/tasks';
-// const API_URL = "http://localhost:5000/tasks";
+// const API_URL = 'https://full-to-do-list.onrender.com/tasks';
+const API_URL = `${process.env.REACT_APP_API_URL}/tasks`;
 
 // Get all tasks
 export const getAllTask = () => {
