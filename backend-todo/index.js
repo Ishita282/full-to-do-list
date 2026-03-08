@@ -19,7 +19,7 @@ app.get('/', (req, res) =>{
 
 app.use("/tasks", taskroute);
 
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
