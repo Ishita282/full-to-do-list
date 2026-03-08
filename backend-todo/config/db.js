@@ -3,11 +3,6 @@ const mongoose = require("mongoose");
 function dbConnection() {
   const DB_URL = process.env.MONGO_URI;
 
-  console.log(process.env.MONGO_URI);
-  console.log(DB_URL);
-  
-  console.log('Testing MongoDB connection...');
-
   mongoose.connect(DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
