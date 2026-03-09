@@ -1,10 +1,9 @@
 const express = require("express");
+require("dotenv").config();
 const taskroute = require("./route/taskroute");
 const dbConnection = require("./config/db");
 const dotenv = require("dotenv");
 const cors = require("cors");
-
-dotenv.config();
 
 dbConnection();
 
